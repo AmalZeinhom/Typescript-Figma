@@ -6,6 +6,10 @@ import Courses from './Components/Courses'
 import MostPopular from './Components/MostPopular'
 import Skills from './Components/Skills'
 import Education from './Components/Education'
+import Reviews from './Components/Reviews'
+import Instructors from './Components/Instructors'
+import CTA from './Components/CTA'
+import Footer from './Components/Footer'
 
 const App: React.FC = () => {
   return (
@@ -17,6 +21,10 @@ const App: React.FC = () => {
       <MostPopular/>
       <Skills/>
       <Education/>
+      <Reviews/>
+      <Instructors/>
+      <CTA/>
+      <Footer/>
     </div>
   )
 }

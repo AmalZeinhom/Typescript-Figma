@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import marketing from "../assets/marketing.png";
 import design from "../assets/design.jpg";
 import programming from "../assets/programming.jpg";
