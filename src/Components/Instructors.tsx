@@ -2,6 +2,7 @@ import React from "react";
 import JohnMark from "../assets/johnMark.jpg";
 import Lara from "../assets/lara.jpg";
 import Zeng from "../assets/zeng.jpg";
+import "../Styles/Instructors.css"
 
 const instructors = [
   {
@@ -27,14 +28,14 @@ const instructors = [
 const Instructors: React.FC = () => {
   return (
     <section className="instructors" >
-      <h2 style={{padding: "16px 32px"}}>Meet our instructors</h2>
+      <h2>Meet our instructors</h2>
       <div className="cards">
         {instructors.map((ins) => (
           <div className="card">
             <img src={ins.img} alt={ins.name} />
             <h3>{ins.name}</h3>
-            <p className="ins-title" style={{color: "#09B451", fontWeight: "500", fontSize: "16.77px"}}>{ins.title}</p>
-            <p className="quote" style={{textAlign: "center"}}>"{ins.quote}"</p>
+            <p className="ins-title">{ins.title}</p>
+            <p className="quote">{ins.quote}</p>
           </div>
         ))}
       </div>

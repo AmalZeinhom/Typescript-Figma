@@ -6,6 +6,10 @@ import ux from "../assets/ux.jpg";
 import photography from "../assets/photography.jpg";
 import analysis from "../assets/analysis.jpg";
 import hacking from "../assets/computer.jpg";
+import "../Styles/MostPopular.css"
+import Select from "react-select";
+import { FaStar } from "react-icons/fa";
+
 
 interface Course {
   id: number;
@@ -74,14 +78,25 @@ const courses: Course[] = [
   },
 ];
 
+const options = [
+  {value: "marketing", label: "Marketing"},
+  {value: "front-end", label: "Front-End"},
+  {value: "ux", label: "UX"},
+  {value: "photography", label: "photography"},
+  {value: "data analysis", label: "Data Analysis"},
+  {value: "hacking", label: "Hacking"},
+];
+
 const MostPopular: React.FC = () => {
   return (
-    <div>
-      <div className="title">
-        <p style={{ fontSize: "32px", fontWeight: 600 }}>
+    <section>
+      <div className="course-title">
+        <h2>
           Most Popular Courses
-        </p>
-        <button className="sort-btn">Sort By</button>
+        </h2>
+        <div>
+          <Select options={options} placeholder= "Sort By" className="sort-btn" classNamePrefix= "react-select" />
+        </div>
       </div>
 
       <div className="courses-container">
@@ -89,18 +104,21 @@ const MostPopular: React.FC = () => {
           <div className="course-card" key={course.id}>
             <img src={course.image} alt={course.title} />
             <div className="course-info">
+              <span className="rating"> 
               <h3>{course.title}</h3>
-              <div className="rating">⭐ {course.rating}</div>
+                <FaStar className="star"/> 
+                {course.rating}
+                </span>
               <div className="course-meta">
-                <span>{course.duration}</span>
-                <span>{course.students}</span>
+                <p>{course.duration}</p>
+                <p>{course.students}</p>
+              <p className="price">{course.price}</p>
               </div>
-              <div className="price">{course.price}</div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

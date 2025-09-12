@@ -1,0 +1,129 @@
+/* !========Most Popular========= */
+.sort-btn {
+  width: 200px;
+}
+
+.react-select__control {
+  border: 2px solid #09b451 !important;
+  border-radius: 40px !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.react-select__control--is-focused {
+  border-color: #09b451 !important;
+  box-shadow: 0 0 5px rgba(9, 180, 81, 0.5) !important;
+}
+
+.react-select__option {
+  color: black !important;
+  padding: 10px !important;
+  cursor: pointer;
+}
+
+.react-select__option--is-selected {
+  background-color: #09b451 !important;
+  color: white !important;
+}
+
+.react-select__option--is-focused {
+  background-color: #e8f9f0 !important;
+  color: #09b451 !important;
+}
+
+.course-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  /* padding: 20px; */
+}
+
+.course-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.course-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.course-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+  line-height: 1.3;
+}
+
+.rating {
+  font-size: 14px;
+  color: #09b451;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.course-meta {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1dbf73;
+}
+
+.star{
+  font-size: 1rem;
+}
+
+
+@media (max-width: 576px) {
+  .courses-container {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+  }
+
+  .course-card img {
+    height: 140px; 
+  }
+
+  .course-info h3 {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+}

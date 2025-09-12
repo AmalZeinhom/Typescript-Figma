@@ -1,51 +1,35 @@
 import React from "react";
 import hero from "../assets/hero.jpg";
 import avatar from "../assets/picture.jpg";
+import "../Styles/Hero.css";
 
 export const Hero: React.FC = () => {
   const avatars: string[] = [avatar, avatar, avatar, avatar, avatar];
 
   return (
-    <div className="hero" style={{ margin: "16px 32px" }}>
+    <section className="hero">
       <div>
-        <p className="hero-description">
+        <h2 className="hero-description">
           Quality <span>Education</span> By Any Means Necessary.
-        </p>
+        </h2>
         <button className="get-started">Get Started</button>
       </div>
 
       <div className="hero-cover">
-        <img
-          src={hero}
-          alt="hero"
-          className="img"
-          style={{
-            width: "431px",
-            height: "508px",
-            borderTopLeftRadius: "40px",
-            borderTopRightRadius: "40px",
-            borderBottomRightRadius: "100px",
-            borderBottomLeftRadius: "40px",
-          }}
-        />
+        <img src={hero} alt="hero" className="img" />
 
-        <div className="overlay1">
+        <div className="card-instructors">
           <p>
             Learn from best <span>instructors</span> around the globe
           </p>
           <div className="avatars">
             {avatars.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`avatar-${index}`}
-                style={{ width: "50px", height: "50px", borderRadius: "50%" }}
-              />
+              <img key={index} src={img} alt={`avatar-${index}`} />
             ))}
           </div>
         </div>
 
-        <div className="overlay2">
+        <div className="card-students">
           <span className="user">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +54,6 @@ export const Hero: React.FC = () => {
 
         <div className="frame"></div>
       </div>
-    </div>
+    </section>
   );
 };

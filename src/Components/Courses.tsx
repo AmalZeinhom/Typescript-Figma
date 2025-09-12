@@ -1,8 +1,10 @@
- import React from "react";
+import React from "react";
 import marketing from "../assets/marketing.png";
 import design from "../assets/design.jpg";
 import programming from "../assets/programming.jpg";
 import technology from "../assets/technology.jpg";
+import "../Styles/Cources.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Type for a single category
 interface Category {
@@ -20,30 +22,32 @@ const categories: Category[] = [
 
 const Courses: React.FC = () => {
   return (
-    <div>
+    <section>
       <div className="title">
-        <p style={{ fontSize: "32px", fontWeight: "700" }}>
-          Choose favourite course from top categories
-        </p>
-        <p style={{ fontSize: "24px", fontWeight: "400" }}>See All</p>
+        <h2>Choose favourite course from top categories</h2>
+        <a href="#" className="see_all">
+          See All
+        </a>
       </div>
 
       <div className="swiper-container">
-        <button className="nav-btn left"></button>
+        <button className="nav-btn left">
+          <FaChevronLeft />
+        </button>
 
-        <div className="categories">
-          {categories.map((category, index) => (
-            <div className="category-card" key={index}>
-              <div className="layer"></div>
-              <img src={category.image} alt={category.alt} />
-              <div className="category-title">{category.title}</div>
-            </div>
-          ))}
-        </div>
+        {categories.map((category, index) => (
+          <div className="category-card" key={index}>
+            <div className="layer"></div>
+            <img src={category.image} alt={category.alt} />
+            <div className="category-title">{category.title}</div>
+          </div>
+        ))}
 
-        <button className="nav-btn right"></button>
+        <button className="nav-btn right">
+          <FaChevronRight />
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
 

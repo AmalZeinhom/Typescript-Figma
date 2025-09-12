@@ -1,6 +1,7 @@
 import React from "react";
 import cover1 from "../assets/cover1.jpg";
 import cover2 from "../assets/cover2.jpg";
+import "../Styles/Reviews.css";
 
 interface List {
   id: number;
@@ -26,57 +27,33 @@ const reviews: List[] = [
 
 const Reviews: React.FC = () => {
   return (
-    <div style={{ margin: "16px 64px" }}>
+    <section className="reviews">
       <div className="rev-title">
-        <h3
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            padding: "20px",
-            fontSize: "32px",
-            fontWeight: "600",
-          }}
-        >
-          Reviews
-        </h3>
+        <h2>Reviews</h2>
       </div>
 
-      <div
-        className="students-reviews"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: '50px'
-        }}
-      >
+      <div className="students-reviews">
         <div className="header">
-          <h1 style={{margin: "0 50px"}}>
+          <h3>
             What Our <br /> <span style={{ color: "#09B451" }}>Students</span>{" "}
             Say <br /> About Us
-          </h1>
+          </h3>
+          <div className="controls">
+            <button>{"<"}</button>
+            <button>{">"}</button>
+          </div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "20px",
-          }}
-        >
+        <div className="content">
           {reviews.map((item) => (
             <div className="review">
               <div className="cover-icon">
-                <img
-                  src={item.coverPhoto}
-                  style={{ width: "70px", height: "70px", borderRadius: "50%" }}
-                />
+                <img src={item.coverPhoto} />
               </div>
               <div className="job-title">
-                <p style={{fontWeight: "600"}}>{item.name}</p>
-                <p style={{color: '#09B451', fontWeight: "500"}}>{item.title}</p>
-                <p style={{maxWidth: "384px" }}>
+                <p>{item.name}</p>
+                <p>{item.title}</p>
+                <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Consectetur ac blandit nam massa massa elementum mollis
                   lectus. Sit ultricies nisl amet non, quis enim velit tempus.
@@ -87,7 +64,7 @@ const Reviews: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

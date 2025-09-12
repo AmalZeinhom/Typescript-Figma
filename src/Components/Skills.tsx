@@ -2,6 +2,8 @@ import React from "react";
 import business from "../assets/business.jpg";
 import prototyping from "../assets/prototyping.jpg";
 import gamming from "../assets/gamming.jpg";
+import "../Styles/Skills.css";
+import { FaStar } from "react-icons/fa";
 
 interface Skill {
   id: number;
@@ -40,36 +42,41 @@ const skills: Skill[] = [
     duration: "6 Weeks",
     students: "👥 1.5k Students",
     price: "30.5$",
-  }
-]
+  },
+];
 
-const Skills : React.FC = () => {
+const Skills: React.FC = () => {
   return (
-  <div>
-    <div className="title">
-        <p style={{ fontSize: "32px", fontWeight: 600 }}>
+    <section>
+      <span className="skills_title">
+        <h2>
           Learn a new skill in two hours
-        </p>
-      </div>
+        </h2>
+      </span>
 
-      <div className="courses-container">
+      <div className="skills">
+        <button className="nav-btn left"></button>
         {skills.map((item) => (
-          <div className="course-card">
+          <div className="skills-card">
             <img src={item.image} alt={item.title} />
-            <div className="course-info">
-              <h3>{item.title}</h3>
-              <div className="rating">⭐ {item.rating}</div>
-              <div className="course-meta">
-                <span>{item.duration}</span>
-                <span>{item.students}</span>
+            <div className="skills-info">
+              <span className="skills-rating">
+                <h3>{item.title}</h3>
+                <FaStar className="star"/>
+                 {item.rating}
+              </span>
+              <div className="skills-meta">
+                <p>{item.duration}</p>
+                <p>{item.students}</p>
+              <p className="price">{item.price}</p>
               </div>
-              <div className="price">{item.price}</div>
             </div>
           </div>
         ))}
+        <button className="nav-btn left"></button>
       </div>
-  </div>
-);
+    </section>
+  );
 };
 
 export default Skills;
