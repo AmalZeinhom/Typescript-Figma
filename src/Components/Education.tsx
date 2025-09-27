@@ -1,6 +1,6 @@
 import React from "react";
 import education from "../assets/education.png";
-import "../Styles/Education.css";
+import styles from "../Styles/Education.module.css";
 
 interface List {
   id: number;
@@ -98,26 +98,28 @@ const lists: List[] = [
 const Education: React.FC = () => {
   return (
     <section>
-      <span className="education-title">
+      <div className= {styles.container}>
+        <span className= {styles.title}>
         <h2>We Bring The Good Education To Life</h2>
       </span>
 
-      <div className="education">
-        <div className="education-img">
+      <div className= {styles.education}>
+        <div className= {styles.educationImg}>
           <img src={education} alt="education" />
         </div>
 
-        <div className="education-info">
+        <div className= {styles.educationInfo}>
           <h3>Let Your Education Do <br/> The Walking</h3>
           <ul>
             {lists.map((item) => (
               <li key={item.id}>
-                <span className="icon-bg">{item.icon}</span>
+                <span className= {styles.iconBg}>{item.icon}</span>
                 <p>{item.title}</p>
               </li>
             ))}
           </ul>
         </div>
+      </div>
       </div>
     </section>
   );

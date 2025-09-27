@@ -1,62 +1,60 @@
 /* !========CTA========= */
-
-.cta {
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  padding: 50px;
-  gap: 100px;
+}
+
+.cta {
   background-image: url(../assets/bg-overlay.png);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: visible; 
-  min-height: 300px; 
-}
-
-.cta-left {
+  overflow: visible;
+  min-height: 300px;
   position: relative;
-  flex: 1;
-  max-width: 300px; 
 }
 
-.cta-left .layer {
+.ctaLeft {
+  flex: 1;
+  max-width: 300px;
+  transform: translateY(-60px);
+}
+
+.cta .layer {
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); 
-  z-index: 1; 
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.cta-left img {
+.ctaLeft img {
   display: block;
   border-radius: 10px;
-  object-fit: cover;
-  width: 100%; 
-  height: auto;
-  position: absolute;
-  top: -250px; 
-  z-index: 0; 
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
-.cta-right {
-  flex: 1;
-  z-index: 100;
-  text-align: left;
+.ctaRight {
+  color: #fff;
+  z-index: 1;
 }
 
-.cta-right h2 {
+.ctaRight h2 {
   font-size: 28px;
   margin-bottom: 15px;
-  color: #333;
   line-height: 1.2;
 }
 
-.cta-right p {
+.ctaRight p {
   margin-bottom: 20px;
-  color: #666;
   font-size: 16px;
 }
 
@@ -65,7 +63,7 @@
   gap: 15px;
 }
 
-.btn-green {
+.btnGreen {
   background: #28a745;
   border: none;
   padding: 12px 20px;
@@ -75,7 +73,7 @@
   text-decoration: none;
 }
 
-.btn-outline {
+.btnOutline {
   border: 1px solid #28a745;
   padding: 12px 20px;
   border-radius: 6px;
@@ -89,46 +87,45 @@
   .cta {
     flex-direction: column;
     padding: 30px;
-    min-height: auto; 
+    min-height: auto;
     text-align: center;
   }
 
-  .cta-left {
-    max-width: 100%; 
-    margin-bottom: 20px; 
+  .ctaLeft {
+    max-width: 100%;
+    margin-bottom: 20px;
+    transform: none;
   }
 
-  .cta-left img {
-    position: static; 
-    top: 0; 
-    width: 200px; 
-    margin: 0 auto; 
+  .ctaLeft img {
+    width: 200px;
+    margin: 0 auto;
   }
 
-  .cta-right {
-    padding-left: 0; 
+  .ctaRight {
+    padding-left: 0;
     text-align: center;
   }
 
   .buttons {
-    justify-content: center; 
+    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .cta-right h2 {
-    font-size: 22px; 
+  .ctaRight h2 {
+    font-size: 22px;
   }
 
-  .cta-right p {
-    font-size: 14px; 
+  .ctaRight p {
+    font-size: 14px;
   }
 
-  .cta-left img {
-    width: 150px; 
+  .ctaLeft img {
+    width: 150px;
   }
 
   .buttons a {
-    padding: 10px 15px; 
+    padding: 10px 15px;
   }
 }

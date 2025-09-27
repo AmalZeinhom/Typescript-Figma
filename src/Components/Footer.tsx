@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/Footer.css";
+import styles from "../Styles/Footer.module.css";
 import { FaFacebook } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram} from 'react-icons/fa';
@@ -7,30 +7,31 @@ import { FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer">
-      <div className="footer-top">
-        <div className="footer-brand">
+    <footer className= {styles.footer}>
+      <div className= {styles.container}>
+        <div className= {styles.footerTop}>
+        <div className= {styles.footerBrand}>
           <h2>WiSchool</h2>
           <p>
             We are not here to sell you products, we sell value through our
             expertise.
           </p>
-          <div className="socials">
+          <div className= {styles.socials}>
             <a href="#"> 
-              <FaFacebook size={20} color="green"/>
+              <FaFacebook/>
             </a>
             <a href="#">
-              <FaTwitter size={20} color="green"/>
+              <FaTwitter/>
               </a>
             <a href="#">
-              <FaInstagram size={20} color="green"/>
+              <FaInstagram/>
             </a>
             <a href="#">
-              <FaLinkedin size={20} color="green"/>
+              <FaLinkedin/>
             </a>
           </div>
         </div>
-        <div className="footer-links">
+        <div className= {styles.footerLinks}>
           <ul>
             <li>
               <a href="#">Home</a>
@@ -80,11 +81,12 @@ const Footer: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className="footer-bottom">
+      <div className= {styles.footerBottom}>
         <form>
           <input type="email" placeholder="Your Email address" />
-          <button className="btn-green">Subscribe</button>
+          <button className= {styles.btnGreen}>Subscribe</button>
         </form>
+      </div>
       </div>
     </footer>
   );
